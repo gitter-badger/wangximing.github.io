@@ -7,7 +7,7 @@
     
 
     <title>
-      Hello World | 王西明的博客 
+      Java Date Format | 王西明的博客 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -15,18 +15,22 @@
       <meta name="author" content="王西明">
     
     
-      <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in trobuleshooting or you can ask me on GitHub.">
+      <meta name="description" content="Use SimpleDateFormat#parse() to parse a String in a certain pattern into a Date.
+12String oldstring = &quot;2011-01-18 00:00:00.0&quot;;Date date = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss.S&quot;).parse(oldstring)">
     
 
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in trobuleshooting or you can ask me on GitHub.">
+    <meta name="description" content="Use SimpleDateFormat#parse() to parse a String in a certain pattern into a Date.
+12String oldstring = "2011-01-18 00:00:00.0";Date date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S").parse(oldstring)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World | 王西明的博客">
-<meta property="og:url" content="http://yoursite.com/2014/12/06/hello-world/">
+<meta property="og:title" content="Java Date Format | 王西明的博客">
+<meta property="og:url" content="http://yoursite.com/2014/12/06/Java-Date-Format/">
 <meta property="og:site_name" content="王西明的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in trobuleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="Use SimpleDateFormat#parse() to parse a String in a certain pattern into a Date.
+12String oldstring = "2011-01-18 00:00:00.0";Date date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S").parse(oldstring)">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World | 王西明的博客">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in trobuleshooting or you can ask me on GitHub.">
+<meta name="twitter:title" content="Java Date Format | 王西明的博客">
+<meta name="twitter:description" content="Use SimpleDateFormat#parse() to parse a String in a certain pattern into a Date.
+12String oldstring = "2011-01-18 00:00:00.0";Date date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S").parse(oldstring)">
 
     
     
@@ -172,33 +176,27 @@ classes that you can use:
               
             </font>
             
+              <font class="tags">
+                <a class="tags-link" href="/tags/Java/">Java</a>
+              </font>
+            
 
         </span>
       </div>
       
 
-      <h1 class="post-title">Hello World</h1>
+      <h1 class="post-title">Java Date Format</h1>
     </header>
 
     <section class="post">
-      <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+      <p>Use SimpleDateFormat#parse() to parse a String in a certain pattern into a Date.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">String</span> oldstring = <span class="string">"2011-01-18 00:00:00.0"</span>;</div><div class="line"><span class="built_in">Date</span> <span class="built_in">date</span> = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss.S"</span>).parse(oldstring);</div></pre></td></tr></table></figure>
 
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>Use SimpleDateFormat#format() to format a Date into a String in a certain pattern.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">String</span> newstring <span class="subst">=</span> <span class="literal">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>)<span class="built_in">.</span>format(<span class="built_in">date</span>);</div><div class="line">System<span class="built_in">.</span>out<span class="built_in">.</span>println(newstring); <span class="comment">// 2011-01-18</span></div></pre></td></tr></table></figure>
 
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<p>Update: as per your failed attempt: the patterns are case sensitive. Read the SimpleDateFormatjavadoc what the individual parts stands for. So stands for example M for months and m for minutes. Also, years exist of four digits, not five. Look closer at the code snippets I posted here above.</p>
+<p>from Stack Overflow</p>
 
     </section>
 
