@@ -169,7 +169,13 @@ classes that you can use:
       <h2 class="post-list__post-title post-title"><a href="/2014/12/06/Java-Date-Format/" title="link to Java Date Format">Java Date Format</a></h2>
 
       <p class="excerpt">
-        
+        <p>Use SimpleDateFormat#parse() to parse a String in a certain pattern into a Date.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">String</span> oldstring = <span class="string">"2011-01-18 00:00:00.0"</span>;</div><div class="line"><span class="built_in">Date</span> <span class="built_in">date</span> = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss.S"</span>).parse(oldstring);</div></pre></td></tr></table></figure>
+
+<p>Use SimpleDateFormat#format() to format a Date into a String in a certain pattern.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">String</span> newstring <span class="subst">=</span> <span class="literal">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>)<span class="built_in">.</span>format(<span class="built_in">date</span>);</div><div class="line">System<span class="built_in">.</span>out<span class="built_in">.</span>println(newstring); <span class="comment">// 2011-01-18</span></div></pre></td></tr></table></figure>
+
+<p>Update: as per your failed attempt: the patterns are case sensitive. Read the SimpleDateFormatjavadoc what the individual parts stands for. So stands for example M for months and m for minutes. Also, years exist of four digits, not five. Look closer at the code snippets I posted here above.<br>
       </p>
 
       <div class="post-list__meta">
