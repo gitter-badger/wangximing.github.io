@@ -203,7 +203,7 @@ classes that you can use:
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String oldstring = <span class="string">"2011-01-18 00:00:00.0"</span>;</div><div class="line">Date date = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss.S"</span>).parse(oldstring);</div></pre></td></tr></table></figure>
 
 <p>Use SimpleDateFormat#format() to format a Date into a String in a certain pattern.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String newstring = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>).format(date);</div><div class="line">System.out.println(newstring); <span class="comment">// 2011-01-18</span></div></pre></td></tr></table></figure>
+<figure class="highlight Java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String newstring = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>).format(date);</div><div class="line">System.out.println(newstring); <span class="comment">// 2011-01-18</span></div></pre></td></tr></table></figure>
 
 <p>Update: as per your failed attempt: the patterns are case sensitive. Read the SimpleDateFormatjavadoc what the individual parts stands for. So stands for example M for months and m for minutes. Also, years exist of four digits, not five. Look closer at the code snippets I posted here above.<br>
       </p>
