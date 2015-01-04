@@ -66,6 +66,44 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Ruby-on-Rails-从零到部署" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/04/Ruby-on-Rails-从零到部署/" class="article-date">
+  <time datetime="2015-01-04T14:22:49.000Z" itemprop="datePublished">Jan 4 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/04/Ruby-on-Rails-从零到部署/">Ruby on Rails 从零到部署</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="环境搭建">环境搭建</h4>
+<p>  <a href="http://wangximing.github.io/2014/12/19/Ruby-on-Rails-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" target="_blank" rel="external">环境搭建</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wangximing.github.com/2015/01/04/Ruby-on-Rails-从零到部署/" data-id="j8uq0gqjkvnz6uf6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Ruby-基础学习-2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/12/28/Ruby-基础学习-2/" class="article-date">
@@ -100,7 +138,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wangximing.github.com/2014/12/28/Ruby-基础学习-2/" data-id="7wtxr7d2hvduow0u" class="article-share-link">Share</a>
+      <a data-url="http://wangximing.github.com/2014/12/28/Ruby-基础学习-2/" data-id="np6m3pofd6nkokoo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ruby-错误处理与异常/">Ruby 错误处理与异常</a></li></ul>
@@ -152,7 +190,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wangximing.github.com/2014/12/28/Ruby-基础学习-1/" data-id="0xrz6ybwpryad7sq" class="article-share-link">Share</a>
+      <a data-url="http://wangximing.github.com/2014/12/28/Ruby-基础学习-1/" data-id="5026svoduni3hl2y" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ruby-运算符/">Ruby 运算符</a></li></ul>
@@ -186,11 +224,45 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h4 id="开发环境">开发环境</h4>
+<ol>
+<li>IDE RubyMine</li>
+<li>文本编辑器和命令行</li>
+<li>Chrome浏览器</li>
+</ol>
+<h4 id="Ruby，_RubyGems，_Rails，_Git_安装（MacOS）">Ruby， RubyGems， Rails， Git 安装（MacOS）</h4>
+<ol>
+<li><a href="https://rvm.io/rvm/install" target="_blank" rel="external">RVM</a><ol>
+<li><code>curl -sSL https://get.rvm.io | bash -s</code> 进行安装。</li>
+<li><code>rvm get stable</code> 确保是最新版本。</li>
+<li><code>rvm requirements</code> 减产安装Ruby的需要条件。<blockquote>
+<p>若提示 <code>command not found</code>, 运行 <code>source ~/.rvm/scripts/rvm</code>。并根据提示安装相关环境。</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><code>rvm install 版本号</code> 安装Ruby。</li>
+<li><code>rvm use 版本号@别名 --create --default</code> 设置默认genset。</li>
+<li>安装RubyGems<ol>
+<li>检查是否安装</li>
+<li>下载RubyGems，解压文件，并运行<code>ruby setup.rb</code></li>
+<li>在~/.gemrc 中配置不生成ri和rdoc文档</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">install:</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">no</span><span class="literal">-</span><span class="comment">rdoc</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">no</span><span class="literal">-</span><span class="comment">ri</span></div><div class="line"><span class="comment">update:</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">no</span><span class="literal">-</span><span class="comment">rdoc</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">no</span><span class="literal">-</span><span class="comment">ri</span></div></pre></td></tr></table></figure>
+
+<ol>
+<li>安装Rails<code>gem install rails --version 4.0.4 --no-ri --no-rdoc</code><blockquote>
+<p>rails -v 检查安装</p>
+</blockquote>
+</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wangximing.github.com/2014/12/19/Ruby-on-Rails-环境搭建/" data-id="tfbrn7dkkfxwn16d" class="article-share-link">Share</a>
+      <a data-url="http://wangximing.github.com/2014/12/19/Ruby-on-Rails-环境搭建/" data-id="6cqlujdg0e6mouh6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -241,7 +313,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wangximing.github.com/2014/12/11/December-January-Study-plan/" data-id="4p0883t7iqcwbe9z" class="article-share-link">Share</a>
+      <a data-url="http://wangximing.github.com/2014/12/11/December-January-Study-plan/" data-id="2d398d0a48ihll6r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习计划/">学习计划</a></li></ul>
@@ -285,7 +357,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wangximing.github.com/2014/12/07/周日游/" data-id="aulmgixy0h8slpoe" class="article-share-link">Share</a>
+      <a data-url="http://wangximing.github.com/2014/12/07/周日游/" data-id="fm1ty8yoz7f8c6et" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/游览/">游览</a></li></ul>
@@ -335,7 +407,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wangximing.github.com/2014/12/06/Java-Date-Format/" data-id="bcx774z0adyri20r" class="article-share-link">Share</a>
+      <a data-url="http://wangximing.github.com/2014/12/06/Java-Date-Format/" data-id="vrfiijmm84j5g85c" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>

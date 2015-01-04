@@ -5,15 +5,51 @@
   
   <title>Ruby on Rails 环境搭建 | 王西明的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="sigh | 王西明 | wangximing">
+  <meta name="description" content="开发环境
+
+IDE RubyMine
+文本编辑器和命令行
+Chrome浏览器
+
+Ruby， RubyGems， Rails， Git 安装（MacOS）
+
+RVM
+curl -sSL https://get.rvm.io | bash -s 进行安装。
+rvm get stable 确保是最新版本。
+rvm requirements 减产安装Ruby的需要条件。
+若提示 command not f">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ruby on Rails 环境搭建">
 <meta property="og:url" content="http://wangximing.github.com/2014/12/19/Ruby-on-Rails-环境搭建/">
 <meta property="og:site_name" content="王西明的博客">
-<meta property="og:description" content="sigh | 王西明 | wangximing">
+<meta property="og:description" content="开发环境
+
+IDE RubyMine
+文本编辑器和命令行
+Chrome浏览器
+
+Ruby， RubyGems， Rails， Git 安装（MacOS）
+
+RVM
+curl -sSL https://get.rvm.io | bash -s 进行安装。
+rvm get stable 确保是最新版本。
+rvm requirements 减产安装Ruby的需要条件。
+若提示 command not f">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ruby on Rails 环境搭建">
-<meta name="twitter:description" content="sigh | 王西明 | wangximing">
+<meta name="twitter:description" content="开发环境
+
+IDE RubyMine
+文本编辑器和命令行
+Chrome浏览器
+
+Ruby， RubyGems， Rails， Git 安装（MacOS）
+
+RVM
+curl -sSL https://get.rvm.io | bash -s 进行安装。
+rvm get stable 确保是最新版本。
+rvm requirements 减产安装Ruby的需要条件。
+若提示 command not f">
 <meta property="fb:app_id" content="sighwang@outlook.com">
 
   
@@ -86,11 +122,45 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h4 id="开发环境">开发环境</h4>
+<ol>
+<li>IDE RubyMine</li>
+<li>文本编辑器和命令行</li>
+<li>Chrome浏览器</li>
+</ol>
+<h4 id="Ruby，_RubyGems，_Rails，_Git_安装（MacOS）">Ruby， RubyGems， Rails， Git 安装（MacOS）</h4>
+<ol>
+<li><a href="https://rvm.io/rvm/install" target="_blank" rel="external">RVM</a><ol>
+<li><code>curl -sSL https://get.rvm.io | bash -s</code> 进行安装。</li>
+<li><code>rvm get stable</code> 确保是最新版本。</li>
+<li><code>rvm requirements</code> 减产安装Ruby的需要条件。<blockquote>
+<p>若提示 <code>command not found</code>, 运行 <code>source ~/.rvm/scripts/rvm</code>。并根据提示安装相关环境。</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><code>rvm install 版本号</code> 安装Ruby。</li>
+<li><code>rvm use 版本号@别名 --create --default</code> 设置默认genset。</li>
+<li>安装RubyGems<ol>
+<li>检查是否安装</li>
+<li>下载RubyGems，解压文件，并运行<code>ruby setup.rb</code></li>
+<li>在~/.gemrc 中配置不生成ri和rdoc文档</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">install:</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">no</span><span class="literal">-</span><span class="comment">rdoc</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">no</span><span class="literal">-</span><span class="comment">ri</span></div><div class="line"><span class="comment">update:</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">no</span><span class="literal">-</span><span class="comment">rdoc</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">no</span><span class="literal">-</span><span class="comment">ri</span></div></pre></td></tr></table></figure>
+
+<ol>
+<li>安装Rails<code>gem install rails --version 4.0.4 --no-ri --no-rdoc</code><blockquote>
+<p>rails -v 检查安装</p>
+</blockquote>
+</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wangximing.github.com/2014/12/19/Ruby-on-Rails-环境搭建/" data-id="tfbrn7dkkfxwn16d" class="article-share-link">Share</a>
+      <a data-url="http://wangximing.github.com/2014/12/19/Ruby-on-Rails-环境搭建/" data-id="6cqlujdg0e6mouh6" class="article-share-link">Share</a>
       
       
     </footer>
