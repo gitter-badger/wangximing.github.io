@@ -108,7 +108,7 @@
 <p><img src="https://wangximing.github.io/pictures/decorator5.jpg" alt="decorator5"></p>
 <p>Component（被装饰对象基类）<br>l         定义对象的接口，可以给这些对象动态增加职责；<br>ConcreteComponent（具体被装饰对象）<br>l         定义具体的对象，Decorator可以给它增加额外的职责；<br>Decorator（装饰者抽象类）<br>l         维护一个指向Component实例的引用，并且定义了与Component一致的接口；<br>ConcreteDecorator（具体装饰者）<br>l         具体的装饰对象，给内部持有的具体被装饰对象增加具体的职责；<br><img src="https://wangximing.github.io/pictures/decorator6.jpg" alt="decorator6"></p>
 <p>我们先来说说上面提到的动态和静态的问题，所谓动态是说可以在系统运行时(RunTime)动态给对象增加其它职责而不需要修改代码或重新编译；所谓静态是说必须通过调整代码(DesignTime)才能给对象增加职责,而且系统还需要重新编译；从具体技术层面来说，对象的组合和继承正好对应于前面的动态和静态，因为通过对象组合建立的交互关系不是在代码中(DesignTime)固定死的，而是在运行时(RunTime)动态组合的；而通过继承建立的关系是僵硬的难以改变的，因为它是在代码中(DesignTime)固定死了的，根本不存在运行时(RunTime)改变的可能。换个角度说：我们应该多使用对象组合来保持系统的运行时扩展性，尽量少使继承，因为继承让程序变得僵硬！这句话听着是不是很熟悉啊？恩！这就是我们前面文章里提过多次的一个设计原则：Favor composition over inheritance.（优先使用对象组合，而非类继承），更多的就不需要再解释了吧？<br>那么回到装饰者模式，跟前面介绍过的模式一样，装饰者同样是一个很简单的模式，特别是画出类图和顺序图之后，一切都很清楚明了。这里只有一个地方需要特殊强调一下：Decorator是装饰者模式里非常特殊的一个类，它既继承于Component【IS A关系】,又维护一个指向Component实例的引用【HAS A关系】，换个角度来说，Decorator跟Component之间，既有动态组合关系又有静态继承关系，WHY? 这里为什么要这么来设计？上面我们说过，组合的好处是可以在运行时给对象增加职责，Decorator【HAS A】Component的目的是让ConcreteDecorator可以在运行时动态给ConcreteComponent增加职责，这一点相对来说还比较好理解；那么Decorator继承于Component的目的是什么？在这里，继承的目的只有一个，那就是可以统一装饰者和被装饰者的接口，换个角度来说，不管是ConcretComponent还是ConcreteDecorator，它们都是 Component，用户代码可以把它们统一看作Component来处理，这样带来的更深一层的好处就是，装饰者对象对被装饰者对象的功能职责扩展对用户代码来说是完全透明的，因为用户代码引用的都是Component，所以就不会因为被装饰者对象在被装饰后，引用它的用户代码发生错误，实际上不会有任何影响，因为装饰前后，用户代码引用的都是Component类型的对象，这真是太完美了！装饰者模式通过继承实现统一了装饰者和被装饰者的接口，通过组合获得了在运行时动态扩展被装饰者对象的能力。<br>我们再举个生活中的例子，俗话说“人在衣着马在鞍”，把这就话用装饰者模式的语境翻译一下，“人通过漂亮的衣服装饰后，男人变帅了，女人变漂亮了；”。对应上面的类图，这里人对应于ConcreteComponent,而漂亮衣服则对应于ConcreteDecorator；换个角度来说，人和漂亮衣服组合在一起【HAS A】，有了帅哥或美女，但是他们还是人【IS A】，还要做人该做的事情，但是可能会对异性更有吸引力了(扩展功能)！<br>现在我们已经认识了装饰者模式，知道了动态关系和静态关系是怎么回事，是时候该解决咖啡店的问题了，从装饰者模式的角度来考虑问题，咖啡和调味品的关系应该是：咖啡是被装饰对象而调味品是装饰者，咖啡和调味品可以任意组合，但是不管怎么组合，咖啡还是咖啡！原来这么简单啊！具体看下面的类图</p>
-<p><img src="https://wangximing.github.io/pictures/decorator6.jpg" alt="decorator6"></p>
+<p><img src="https://wangximing.github.io/pictures/decorator7.jpg" alt="decorator7"></p>
 <p>如图所示，Beverage还是所有饮料的基类，它对应于装饰者模式类图里的Component,是所有被装饰对象的基类；HouseBlend, DarkRoast, Espresso, Decaf是具体的饮料(咖啡)种类，对应于前面的ConcreteComponent，即是具体的被装饰对象；CondimentDecorator对应于前面的Decorator，是装饰者的抽象类；而Milk，Mocha，Soy，Whip则都是具体的调味品，对于前面的ConcreteDecorator，也就是具体的装饰者。下面我们通过具体的代码再进一步理解一下基于装饰者模式的记账系统的实现.</p>
 <p>饮品的基类（被装饰者）</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//基类</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Beverage</span><span class="params">(size)</span> </span>{</div><div class="line">  <span class="keyword">this</span>.size = size;</div><div class="line">}</div><div class="line"></div><div class="line">Beverage.prototype.getDiscription = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">  <span class="keyword">return</span> <span class="string">'Unknown Beverage'</span>;</div><div class="line">}</div><div class="line"></div><div class="line">Beverage.prototype.getSize = <span class="function"><span class="keyword">function</span> <span class="params">()</span></span>{</div><div class="line">  <span class="keyword">return</span> size;</div><div class="line">}</div><div class="line"></div><div class="line">Beverage.prototype.setSize = <span class="function"><span class="keyword">function</span> <span class="params">(size)</span></span>{</div><div class="line">  <span class="keyword">this</span>.setSize = size;</div><div class="line">}</div></pre></td></tr></table></figure>
@@ -154,7 +154,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wangximing.github.com/2015/01/16/The Decorator Pattern/" data-id="5tuldvu9co24n7ln" class="article-share-link">Share</a>
+      <a data-url="http://wangximing.github.com/2015/01/16/The Decorator Pattern/" data-id="jbpkkigolgaq6nsq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
@@ -194,7 +194,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wangximing.github.com/2015/01/04/Ruby-on-Rails-从零到部署/" data-id="djohr571ssyvtxcy" class="article-share-link">Share</a>
+      <a data-url="http://wangximing.github.com/2015/01/04/Ruby-on-Rails-从零到部署/" data-id="k95jf0fh905ghsh0" class="article-share-link">Share</a>
       
       
     </footer>
